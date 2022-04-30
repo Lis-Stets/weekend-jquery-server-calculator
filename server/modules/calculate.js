@@ -1,7 +1,7 @@
 const express = require( 'express' );
 const router = express.Router();
 const calculationHistory = []
-const newCalculation = {}
+let newCalculation = {}
 const solutionDisplay = {}
 //routes
 
@@ -37,11 +37,22 @@ router.post ( '/', (req,res) =>{ //I am not sure if this is correct. Should '/ca
         newCalculation.solution = newSolution;
     }//end multiplication else if
     console.log(solutionDisplay);
-    
+
     //push to history array here;
     calculationHistory.push( newCalculation );
-    console.log( newCalculation );
+    console.log( 'object to push into current history:', newCalculation );
+    console.log( 'Current history:', calculationHistory );
     res.sendStatus( 200 );
+}) //end POST
+console.log('outside POST calculation History', calculationHistory)
+router.get( '/', (req, res)=>{
+    console.log( '/calculate/ GET solution' );
+    res.send( solutionDisplay );
+})
+
+router.get( '/history', (req, res)=>{
+    console.log( '/calculate/ GET solution' );
+    res.send( calculationHistory );
 })
 
 module.exports = router;
