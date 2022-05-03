@@ -10,38 +10,37 @@
     <title>Calculator Weekwnd Challenge</title>
 </head>
 <body>
-    <h1>Dorian Calculator</h1>
-    <div id="inputsDiv">
-        <input type="number" id="firstNumInput" >
-        <select id="mathOperatorInput">
-            <option>+</option>
-            <option>-</option>
-            <option>*</option>
-            <option>/</option>
-        </select>
+    <div class="calculatorDiv">
+        <h1>Dorian Calculator</h1>
+        <div id="inputsDiv" class="inputsDiv">
+            <input type="number" id="firstNumInput" >
+            <!-- <select id="mathOperatorInput">
+                <option>+</option>
+                <option>-</option>
+                <option>*</option>
+                <option>/</option>
+            </select> -->
 
-        <!-- keeping to add in after i get base mode functionality
-        <button id="additionButton">+</button>
-        <button id="subtractionButton">-</button>
-        <button id="multiplicationButton">*</button>
-        <button id="divisionButton">/</button> -->
+           <!-- keeping to add in after I get base mode functionality -->
+            <button id="additionButton">+</button>
+            <button id="subtractionButton">-</button>
+            <button id="multiplicationButton">*</button>
+            <button id="divisionButton">/</button>
 
-        <input type="number" id="secondNumInput" >
-        <button id="calculateButton">=</button>
-        <button id="clearButton">c</button>
-    </div>
+            <input type="number" id="secondNumInput" >
+            <button id="calculateButton">=</button>
+            <button id="clearButton">c</button>
+        </div>
 
-    <div id="solutionOutputDiv">
-        <h2 id="solutionOutput">Solution: </h2>
-    </div>
-    <div id="calculationHistoryDiv">
-        <ul id="calculationHistoryOutput">
-            <li>2+2= 4</li>
-            <li>2+2= 4</li>
-            <li>2+2= 4</li>
-            <li>2+2= 4</li>
-            <li>2+2= 4</li>
-        </ul>
+        <div id="solutionOutputDiv" class="solutionOutputDiv">
+            <h2 id="solutionOutput">Solution: </h2>
+        </div>
+        <div id="calculationHistoryDiv" class="calculationHistoryDiv">
+            <h2>Calculation History:</h2>
+            <ul id="calculationHistoryOutput">
+
+            </ul>
+        </div>
     </div>
 </body>
 </html>

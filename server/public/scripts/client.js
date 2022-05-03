@@ -1,27 +1,47 @@
 $( document ).ready( onReady );
 
 function onReady(){
+    $( '#additionButton' ).on( 'click', additionCapture );
+    $( '#subtractionButton' ).on( 'click', subtractionCapture );
+    $( '#multiplicationButton' ).on( 'click', multiplicationCapture );
+    $( '#divisionButton' ).on( 'click', divisionCapture );
+
     $( '#calculateButton' ).on( 'click', newEquation );
     $( '#clearButton' ).on( 'click', clearEquation );
-
+    displayEquationHistoryGET();
 } //end onReady
+
+let operatorToBeUsed
+
+function additionCapture(){
+    operatorToBeUsed = '+' ;
+}
+function subtractionCapture(){
+    operatorToBeUsed = '-' ;
+}
+function multiplicationCapture(){
+    operatorToBeUsed = '*' ;
+}
+function divisionCapture(){
+    operatorToBeUsed = '/' ;
+}
 
 function clearEquation(){
     console.log( "in  clearEquation" );
 
-   $( '#numOneInput' ).val( '' );
-   $( '#mathOperatorInput' ).val( '' );
-   $( '#numTwoInput' ).val( '' );
+   $( '#firstNumInput' ).val( '' );
+   $( '#secondNumInput' ).val( '' );
 } //end clearEquation
 
 function newEquation(){
     console.log( "in  newEquation" );
     let equationInputs = {
         firstNum: $( '#firstNumInput' ).val(),
-        operator: $( '#mathOperatorInput' ).val(),
+        operator: operatorToBeUsed,
         secondNum: $( '#secondNumInput' ).val(),
     }
     console.log( equationInputs, equationInputs.firstNum, equationInputs.operator, equationInputs.secondNum );
+    clearEquation();
     //send object to server via AJAX
     $.ajax({
         method: 'POST', 

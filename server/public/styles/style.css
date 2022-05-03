@@ -2,3 +2,22 @@ body{
     background-color: azure;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
+.calculatorDiv{
+    border: 5px solid rgb(26, 109, 127);
+    border-radius: 25px;
+}
+h1{
+    text-align: center;
+}
+.inputsDiv{
+    text-align: center;
+}
+.solutionOutputDiv{
+    text-align: center;
+}
+.calculationHistoryDiv{
+    margin: 20px;
+    border: 5px solid rgba(193, 247, 230, 0.9);
+    border-radius: 25px;
+    padding: 10px;
+}

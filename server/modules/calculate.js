@@ -1,13 +1,13 @@
 const express = require( 'express' );
 const router = express.Router();
-const calculationHistory = []
-let newCalculation = {}
+let calculationHistory = []
 const solutionDisplay = {}
 //routes
 
-router.post ( '/', (req,res) =>{ //I am not sure if this is correct. Should '/calculator' go here instead?
+router.post ( '/', (req,res) =>{ 
     console.log('in /calculate/   POST:', req.body); 
     //calculations function here;
+    let newCalculation = {}
     newCalculation.firstNum = req.body.firstNum;
     newCalculation.operator = req.body.operator;
     newCalculation.secondNum = req.body.secondNum;
@@ -44,7 +44,8 @@ router.post ( '/', (req,res) =>{ //I am not sure if this is correct. Should '/ca
     console.log( 'Current history:', calculationHistory );
     res.sendStatus( 200 );
 }) //end POST
-console.log('outside POST calculation History', calculationHistory)
+//console.log('outside POST calculation History', calculationHistory)
+
 router.get( '/', (req, res)=>{
     console.log( '/calculate/ GET solution' );
     res.send( solutionDisplay );
